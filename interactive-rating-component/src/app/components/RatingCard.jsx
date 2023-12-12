@@ -15,42 +15,14 @@ function RatingCard() {
         appreciated to help us improve our offering!
       </p>
 
-      <div>
-        <div id="ratings" class="flex gap-5   h-14 border">
-          <button
-            type="button"
-            class="rating-item rounded-full border bg-gray-dark w-full h-full flex justify-center items-center text-gray-text hover:bg-gray-light hover:text-whiteish transition-colors duration-[400ms] ease-in-out"
-          >
-            1
-          </button>
-          <button
-            type="button"
-            class="rating-item rounded-full bg-gray-dark w-full h-full flex justify-center items-center text-gray-text hover:bg-gray-light hover:text-whiteish transition-colors duration-[400ms] ease-in-out"
-          >
-            2
-          </button>
-          <button
-            type="button"
-            class="rating-item rounded-full bg-gray-dark w-full h-full flex justify-center items-center text-gray-text hover:bg-gray-light hover:text-whiteish transition-colors duration-[400ms] ease-in-out"
-          >
-            3
-          </button>
-          <button
-            type="button"
-            class="rating-item rounded-full bg-gray-dark w-full h-full flex justify-center items-center text-gray-text hover:bg-gray-light hover:text-whiteish transition-colors duration-[400ms] ease-in-out"
-          >
-            4
-          </button>
-          <button
-            type="button"
-            class="rating-item rounded-full bg-gray-dark w-full h-full flex justify-center items-center text-gray-text hover:bg-gray-light hover:text-whiteish transition-colors duration-[400ms] ease-in-out"
-          >
-            5
-          </button>
-        </div>
+   
+        <div id="ratings" class="fl">
+         
+       
+       
       </div>
 
-      <button>Submit</button>
+      <button className="rounded-full bg-orange py-3 text-xl font-bold hover:bg-white transition-all hover:text-orange ">SUBMIT</button>
     </article>
   );
 }
