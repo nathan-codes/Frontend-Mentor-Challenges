@@ -3,7 +3,7 @@ import staricon from "../../../public/icon-star.svg";
 
 function RatingCard() {
   return (
-    <article className="w-[470px] h-[420px]  bg-[#05014A] text-white  rounded-[40px]  flex flex-col  border-4 justify-center space-y-6 p-8">
+    <article className="w-[470px]   bg-[#182a47] text-white  rounded-[40px]  flex flex-col  border-4 justify-center space-y-6 p-8">
       <span className="border rounded-full w-fit p-3">
         <Image src={staricon} className="w-5" />
       </span>
@@ -15,14 +15,17 @@ function RatingCard() {
         appreciated to help us improve our offering!
       </p>
 
-   
-        <div id="ratings" class="fl">
-         
-       
-       
+      <div id="ratings" class="flex justify-between">
+        <button className="bg-[#263238]  rounded-full flex items-center justify-center w-[55px] h-[55px]"> 1 </button>
+        <button className="bg-[#263238]  rounded-full flex items-center justify-center w-[55px] h-[55px]"> 1 </button>
+        <button className="bg-[#263238]  rounded-full flex items-center justify-center w-[55px] h-[55px]"> 1 </button>
+        <button className="bg-[#263238]  rounded-full flex items-center justify-center w-[55px] h-[55px]"> 1 </button>
+        <button className="bg-[#263238]  rounded-full flex items-center justify-center w-[55px] h-[55px]"> 1 </button>
       </div>
 
-      <button className="rounded-full bg-orange py-3 text-xl font-bold hover:bg-white transition-all hover:text-orange ">SUBMIT</button>
+      <button className="rounded-full bg-orange py-3 text-xl font-bold hover:bg-white transition-all hover:text-orange ">
+        SUBMIT
+      </button>
     </article>
   );
 }
