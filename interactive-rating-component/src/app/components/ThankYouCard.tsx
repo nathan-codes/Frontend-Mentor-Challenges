@@ -7,7 +7,7 @@ interface ThankYouCardProp {
 
 function ThankYouCard({ selected }: ThankYouCardProp) {
   return (
-    <article className="w-[470px]   bg-[#182a47]   rounded-[40px]  flex flex-col  justify-center items-center space-y-6 p-8 py-[2rem]">
+    <article className="w-[470px]  bg-gradient-to-r from-[#20262F] to-[#181E27]    rounded-[40px]  flex flex-col  justify-center items-center space-y-6 p-8 py-[2rem]">
       <Image
         src={illustrationIcon}
         className="mx-auto"
