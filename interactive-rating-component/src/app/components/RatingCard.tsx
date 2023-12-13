@@ -9,8 +9,8 @@ type HomeProps = {
 
 function RatingCard(props: HomeProps) {
   return (
-    <article className="w-[470px]   bg-[#182a47] text-white  rounded-[40px]  flex flex-col  justify-center space-y-6 p-8">
-      <span className="border rounded-full w-fit p-3">
+    <article className="w-[470px]   bg-gradient-to-r from-[#20262F] to-[#181E27] text-white  rounded-[40px]  flex flex-col  justify-center space-y-6 p-8 ">
+      <span className=" bg-[#263238] rounded-full w-fit p-3">
         <Image src={staricon} className="w-5" alt="Star icon" />
       </span>
 

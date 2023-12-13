@@ -29,8 +29,7 @@ export default function Home() {
   const [submit, setSubmit] = useState(false);
 
   return (
-    <main className="min-h-screen  flex flex-col items-center justify-center bg-slate-800">
-     
+    <main className="min-h-screen  flex flex-col items-center justify-center bg-[#131518]">
       {!submit ? (
         <RatingCard
           buttonRatings={rating}
