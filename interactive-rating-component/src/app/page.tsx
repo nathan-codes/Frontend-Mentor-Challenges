@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import RatingCard from "./components/RatingCard";
 import ThankYouCard from "./components/ThankYouCard";
 import { useState } from "react";
