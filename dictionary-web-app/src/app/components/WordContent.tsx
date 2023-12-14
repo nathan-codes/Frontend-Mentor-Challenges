@@ -11,7 +11,7 @@ function WordContent({ meaningList }: WordContentProps) {
           (etc.) A set of keys used to operate a typewriter, computer etc
         </li> */}
               {meaningList?.map((item,index) => {
-                  return <li className="text-zinc-800 text-lg font-normal leading-normal" key={index}> {item}</li>
+                  return <li className="text-zinc-800 text-lg dark:text-[#fff] font-normal leading-normal" key={index}> {item}</li>
               })}
       
       </ul>

@@ -9,7 +9,7 @@ import newWindowIcon from "../../public/images/icon-new-window.svg"
 
 export default function Home() {
   return (
-    <div className="p-5 md:max-w-screen-md mx-auto">
+    <div className="p-5 md:max-w-screen-md mx-auto ">
       {/* Header Section */}
       <header>
         <nav>
@@ -21,7 +21,7 @@ export default function Home() {
       <main>
         <section className="flex justify-between">
           <div>
-            <h1 className="text-zinc-800 text-[32px] font-bold ">keyboard</h1>
+            <h1 className="text-zinc-800 text-[32px] font-bold dark:text-[#FFF]">keyboard</h1>
             <span className="text-purple-500 text-lg font-normal leading-normal">
               /ˈkiːbɔːd/
             </span>
@@ -66,8 +66,12 @@ export default function Home() {
         <p className="text-neutral-500  font-normal font-['Inter'] underline">
           Source
         </p>
-        <a className="text-zinc-800  font-normal font-['Inter'] underline flex items-center ">
-          https://en.wiktionary.org/wiki/keyboard <span className="pl-2"> <Image src={newWindowIcon} alt="New window Icon"/> </span>
+        <a className="text-zinc-800 dark:text-[#FFF]  font-normal font-['Inter'] underline flex items-center ">
+          https://en.wiktionary.org/wiki/keyboard{" "}
+          <span className="pl-2">
+            {" "}
+            <Image src={newWindowIcon} alt="New window Icon" />{" "}
+          </span>
         </a>
       </footer>
     </div>

@@ -10,7 +10,7 @@ function WordBreak({ wordtype }: WordBreakProps) {
 
      
       <div className="w-full flex items-center space-x-2 justify-between my-5">
-        <span className="text-zinc-800 text-2xl font-bold pr-4">{wordtype}</span>
+        <span className="text-zinc-800 dark:text-[#FFF] text-2xl font-bold pr-4">{wordtype}</span>
         <hr className="w-full h-[3px] mx-auto my-4 bg-gray-100 border-0 rounded " />
       </div>
 

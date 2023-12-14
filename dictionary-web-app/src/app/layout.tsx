@@ -18,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className=" dark:bg-[#050505] transition-colors duration-1000 ">
+        {children}
+      </body>
     </html>
-  )
+  );
 }
