@@ -5,23 +5,56 @@ import SearchInput from "./components/SearchInput";
 import playButtonIcon from "../../public/images/icon-play.svg";
 import WordBreak from "./components/WordBreak";
 import WordContent from "./components/WordContent";
-import newWindowIcon from "../../public/images/icon-new-window.svg"
+import newWindowIcon from "../../public/images/icon-new-window.svg";
+import { useState, useEffect } from "react";
+import axios, { AxiosResponse } from "axios";
+import data from "../data.json";
+
+let dictionary_api = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 export default function Home() {
+  const [results, setResults] = useState(data);
+  
+
+  useEffect(() => {
+    
+
+    // Call the function with a search word (e.g., "keyboard")
+    getWordDefinition("");
+  }, []);
+  
+const getWordDefinition = async function (searchWord: string) {
+  try {
+    const response = await axios.get(`${dictionary_api}${searchWord}`);
+    const Data = response.data;
+    setResults(Data);
+  } catch (e) {
+    console.log("Error", e);
+  }
+};
+  
+  const searchFn = (searchvalue:string) => {
+    getWordDefinition(searchvalue)
+  }
+
   return (
     <div className="p-5 md:max-w-screen-md mx-auto ">
       {/* Header Section */}
-      <header>
+      <header> 
         <nav>
           <Navbar />
         </nav>
-        <SearchInput />
+        <SearchInput search={searchFn} />
       </header>
       {/* Main Section */}
       <main>
         <section className="flex justify-between">
           <div>
-            <h1 className="text-zinc-800 text-[32px] font-bold dark:text-[#FFF]">keyboard</h1>
+           
+            <h1 className="text-zinc-800 text-[32px] font-bold dark:text-[#FFF]">
+              {" "}
+              {results[0].word}{" "}
+            </h1>
             <span className="text-purple-500 text-lg font-normal leading-normal">
               /ˈkiːbɔːd/
             </span>
@@ -70,7 +103,7 @@ export default function Home() {
           https://en.wiktionary.org/wiki/keyboard{" "}
           <span className="pl-2">
             {" "}
-            <Image src={newWindowIcon} alt="New window Icon" />{" "}
+            <Image src={newWindowIcon} alt="New window Icon" />
           </span>
         </a>
       </footer>

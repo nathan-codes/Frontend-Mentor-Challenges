@@ -20,6 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <body className=" dark:bg-[#050505] transition-colors duration-1000 ">
         {children}
+
+        
       </body>
     </html>
   );
