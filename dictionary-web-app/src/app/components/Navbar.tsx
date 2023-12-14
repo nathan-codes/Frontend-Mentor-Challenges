@@ -11,11 +11,11 @@ function Navbar() {
     setDropdown((prev) => !prev);
   };
   return (
-    <nav className="border-2 border-red-700 flex justify-between">
+    <nav className="flex justify-between">
       <Image alt="dictionary-logo" src={logo} />
 
       <div className="right-Section flex  items-center space-x-3 ">
-        <select name="font" id="font" className="border-none ">
+        <select name="font" id="font" >
           <option value="Sans-serif">Sans serif</option>
           <option value="serif">Serif</option>
           <option value="Mono">Mono</option>
