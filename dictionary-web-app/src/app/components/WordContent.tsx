@@ -1,5 +1,7 @@
 interface WordContentProps {
-  meaningList?: string[];
+  meaningList?: {
+    definition: string
+  }[];
 }
 
 function WordContent({ meaningList }: WordContentProps) {
@@ -10,8 +12,9 @@ function WordContent({ meaningList }: WordContentProps) {
         {/* <li ">
           (etc.) A set of keys used to operate a typewriter, computer etc
         </li> */}
-              {meaningList?.map((item,index) => {
-                  return <li className="text-zinc-800 text-lg dark:text-[#fff] font-normal leading-normal" key={index}> {item}</li>
+        {meaningList?.map((item, index) => {
+                console.log(item)
+                  return <li className="text-zinc-800 text-lg dark:text-[#fff] font-normal leading-normal" key={index}> {item.definition}</li>
               })}
       
       </ul>

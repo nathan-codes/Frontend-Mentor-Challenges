@@ -14,33 +14,30 @@ let dictionary_api = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 export default function Home() {
   const [results, setResults] = useState(data);
-  
 
   useEffect(() => {
-    
-
     // Call the function with a search word (e.g., "keyboard")
     getWordDefinition("");
   }, []);
-  
-const getWordDefinition = async function (searchWord: string) {
-  try {
-    const response = await axios.get(`${dictionary_api}${searchWord}`);
-    const Data = response.data;
-    setResults(Data);
-  } catch (e) {
-    console.log("Error", e);
-  }
-};
-  
-  const searchFn = (searchvalue:string) => {
-    getWordDefinition(searchvalue)
-  }
+
+  const getWordDefinition = async function (searchWord: string) {
+    try {
+      const response = await axios.get(`${dictionary_api}${searchWord}`);
+      const Data = response.data;
+      setResults(Data);
+    } catch (e) {
+      console.log("Error", e);
+    }
+  };
+
+  const searchFn = (searchvalue: string) => {
+    getWordDefinition(searchvalue);
+  };
 
   return (
     <div className="p-5 md:max-w-screen-md mx-auto ">
       {/* Header Section */}
-      <header> 
+      <header>
         <nav>
           <Navbar />
         </nav>
@@ -50,13 +47,11 @@ const getWordDefinition = async function (searchWord: string) {
       <main>
         <section className="flex justify-between">
           <div>
-           
             <h1 className="text-zinc-800 text-[32px] font-bold dark:text-[#FFF]">
-              {" "}
-              {results[0].word}{" "}
+              {results[0].word}
             </h1>
             <span className="text-purple-500 text-lg font-normal leading-normal">
-              /ˈkiːbɔːd/
+              {results[0].phonetic}
             </span>
           </div>
 
@@ -69,13 +64,7 @@ const getWordDefinition = async function (searchWord: string) {
 
         <WordBreak wordtype="noun" />
 
-        <WordContent
-          meaningList={[
-            "(etc.) A set of keys used to operate a typewriter, computer etc.",
-            "A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.",
-            "A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard",
-          ]}
-        />
+        <WordContent meaningList={results[0].meanings[0].definitions} />
 
         <span className="flex space-x-4 mt-4">
           <p className="text-neutral-500 text-base font-normal">Synonyms</p>
@@ -86,12 +75,7 @@ const getWordDefinition = async function (searchWord: string) {
 
         <WordBreak wordtype="verb" />
 
-        <WordContent
-          meaningList={[
-            "To type on a computer keyboard.",
-            "“Keyboarding is the part of this job I hate the most.”",
-          ]}
-        />
+        <WordContent meaningList={results[0].meanings[1].definitions} />
       </main>
 
       <footer>
@@ -99,7 +83,7 @@ const getWordDefinition = async function (searchWord: string) {
         <p className="text-neutral-500  font-normal font-['Inter'] underline">
           Source
         </p>
-        <a className="text-zinc-800 dark:text-[#FFF]  font-normal font-['Inter'] underline flex items-center ">
+        <a className="text-zinc-800 dark:text-[#FFF]  font-normal font-['Inter'] underline flex items-center " target="">
           https://en.wiktionary.org/wiki/keyboard{" "}
           <span className="pl-2">
             {" "}
