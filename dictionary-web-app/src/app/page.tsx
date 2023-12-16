@@ -83,7 +83,11 @@ export default function Home() {
         <p className="text-neutral-500  font-normal font-['Inter'] underline">
           Source
         </p>
-        <a className="text-zinc-800 dark:text-[#FFF]  font-normal font-['Inter'] underline flex items-center " target="">
+        <a
+          className="text-zinc-800 dark:text-[#FFF]  font-normal font-['Inter'] underline flex items-center "
+          target="_blank"
+          href={results[0].sourceUrls[0]}
+        >
           https://en.wiktionary.org/wiki/keyboard{" "}
           <span className="pl-2">
             {" "}
