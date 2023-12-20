@@ -27,16 +27,14 @@ function AdviceCard() {
     })
 
     useEffect(() => {
-        const getInitialAdvice = async () => {
-            const result = await axios.get("https://api.adviceslip.com/advice");
-           setAdvice(result.data);
-        }
-     getInitialAdvice()
+        
+     getAdvice()
     }, [])
     
     const getAdvice = async () => {
         const result = await axios.get("https://api.adviceslip.com/advice");
-        setAdvice(result.data);
+        const advice = await result.data;
+        setAdvice(advice);
     }
 
 
@@ -45,7 +43,7 @@ function AdviceCard() {
     <article className="m-4 py-10 px-4 rounded-[40px] max-w-[45rem] flex justify-center flex-col items-center  bg-gradient-to-r from-[#675a9b] to-[#000]">
       <div className="flex flex-col  items-center justify-between space-y-10">
         <h2 className="text-emerald-300 text-xl font-normal  tracking-[3px] italic uppercase md:text-2xl">
-                  Advice #{advice.slip.id}
+          Advice #{advice.slip.id}
         </h2>
         <h1 className="text-white text-2xl  text-center md:text-3xl">
           &quot; {advice.slip.advice}. &quot;
@@ -53,11 +51,12 @@ function AdviceCard() {
 
         <Image src={IconDivider} alt="Divider Icon" />
       </div>
-      <div className="relative  bg-secondary p-6 rounded-full top-[4.6rem]">
-        <Image src={BookmarkIcon} alt="Bookmark icon" onClick={getAdvice}/>
-          </div>
-          
-          
+      <div
+        className="relative  bg-secondary p-6 rounded-full top-[4.6rem] cursor-pointer hover:drop-shadow-2xl"
+        onClick={getAdvice}
+      >
+        <Image src={BookmarkIcon} alt="Bookmark icon" />
+      </div>
     </article>
   );
 }
