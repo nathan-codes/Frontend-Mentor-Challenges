@@ -23,7 +23,7 @@ export default function Home() {
   const getWordDefinition = async function (searchWord: string) {
     try {
       const response = await axios.get(`${dictionary_api}${searchWord}`);
-      const Data = response.data;
+      const Data = await response.data;
       setResults(Data);
     } catch (e) {
       console.log("Error", e);
