@@ -1,9 +1,13 @@
 import Image from "next/image";
 import illustrationIcon from "../../../public/illustration-thank-you.svg";
+import { useState } from "react";
 
 interface ThankYouCardProp {
   selected: number;
 }
+
+
+ 
 
 function ThankYouCard({ selected }: ThankYouCardProp) {
   return (
