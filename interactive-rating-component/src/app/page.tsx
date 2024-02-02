@@ -8,7 +8,6 @@ import { useState } from "react";
 export default function Home() {
  
   const [rating, setRating] = useState([1, 2, 3, 4, 5]);
-
   const [selected, setSelected] = useState(0);
 
  
