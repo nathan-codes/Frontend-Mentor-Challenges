@@ -7,7 +7,7 @@ interface SocialCardProps {
 const SocialProfileCard = ({socials}:SocialCardProps) => {
   return (
     <div>
-      
+        <img src="" alt="" />
     </div>
   )
 }
