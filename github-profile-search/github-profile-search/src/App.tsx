@@ -4,7 +4,7 @@ import ProfileCard from "./componets/ProfileCard";
 
 const App = () => {
   return (
-    <div className="p-4 font-spaceMono max-w-screen-md mx-auto">
+    <div className="p-4 font-spaceMono max-w-screen-sm mx-auto">
       <Header />
       <ProfileCard />
     </div>
