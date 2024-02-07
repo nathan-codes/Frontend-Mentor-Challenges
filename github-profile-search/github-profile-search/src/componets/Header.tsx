@@ -2,14 +2,13 @@
 import Navbar from "./Navbar.tsx";
 import SearchInput from "./SearchInput.tsx";
 
-const Header = () => {
+const Header = ({ search }) => {
   return (
     <header>
-          <Navbar />
-          <SearchInput />
-
+      <Navbar />
+      <SearchInput searchTerm={search} />
     </header>
-  )
-}
+  );
+};
 
 export default Header
