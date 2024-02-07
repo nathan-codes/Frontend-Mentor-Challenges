@@ -3,9 +3,8 @@ import Header from "./componets/Header";
 import ProfileCard from "./componets/ProfileCard";
 import axios from "axios";
 
-
 const BASE_URL = "https://api.github.com/users";
-const DEFAULT_USERNAME = "red";
+const DEFAULT_USERNAME = "octocat";
 
 interface ProfileState {
   data: {
@@ -24,7 +23,7 @@ interface ProfileState {
     followers: number;
     following: number;
     created_at: string;
-  },
+  };
   isLoading: boolean;
 }
 
@@ -56,16 +55,31 @@ const App: React.FC = () => {
     isLoading: true,
   });
 
-  // App component
+  const fetchData = async () => {
+    try {
+      const profileResult = await axios.get(`${BASE_URL}/${username}`);
+      setProfile({ data: profileResult.data, isLoading: false });
+    } catch (error) {
+      console.error("Error fetching profile data:", error);
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const profileResult = await axios.get(`${BASE_URL}/${username}`);
+        const profileResult = await axios.get(
+          `${BASE_URL}/${DEFAULT_USERNAME}`
+        );
         setProfile({ data: profileResult.data, isLoading: false });
       } catch (error) {
         console.error("Error fetching profile data:", error);
       }
     };
+    fetchData();
+  }, []);
+
+  // App component
+  useEffect(() => {
     fetchData(); // Call the async function
   }, [username]);
   return (
